@@ -24,9 +24,9 @@ public class App{
       System.out.println("EXIT: exit the program");
       System.out.println(""); // Formatting
       
-      String option = getStringInput();
+      String menuSelection = getStringInput();
 
-      switch (option) {
+      switch (menuSelection) {
         case "LIST":
           listSurfaces();
           break;
@@ -55,6 +55,7 @@ public class App{
         default:
           System.out.println("Error: This is not a valid input");
           break;
+
       }
 
       // Formatting line break
@@ -131,11 +132,13 @@ public class App{
     System.out.println("Enter the width of the surface you are painting");
     double w = getDoubleInput();
 
+    System.out.println("");
     System.out.println("Enter the length of the surface you are painting");
     double l = getDoubleInput();
 
     // Create surface and add to surfaces
     Surface surface = new Surface(name, w*l, p);
+    System.out.println("");
     surfaces.add(surface);
     System.out.println("The surface has been added!");
   }
@@ -175,7 +178,7 @@ public class App{
   public int getIntInput(){
     // Loop until valid number to return
     while (true) {
-            String str = input.next();
+            String str = input.nextLine();
             int res = 0;
             try {
                 res = Integer.parseInt(str);
@@ -189,7 +192,7 @@ public class App{
   public double getDoubleInput(){
     // Loop until valid double to return
     while (true) {
-            String str = input.next();
+            String str = input.nextLine();
             double res = 0;
             try {
                 res = Double.parseDouble(str);

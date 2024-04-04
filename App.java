@@ -182,6 +182,9 @@ public class App{
             int res = 0;
             try {
                 res = Integer.parseInt(str);
+                if (res < 0) {
+                  throw new NumberFormatException();
+                }
                 return res;
             } catch (NumberFormatException e) {
                 System.out.println("Invalid number, please try again:");
@@ -196,6 +199,9 @@ public class App{
             double res = 0;
             try {
                 res = Double.parseDouble(str);
+                if (res < 0) {
+                  throw new NumberFormatException();
+                }
                 return res;
             } catch (NumberFormatException e) {
                 System.out.println("Invalid number, please try again:");
